@@ -12,6 +12,15 @@
     <a href="https://hris.komatsugroup.id/sf6/?sfid=sys.sec.cron.client.komatsuindonesia.healthdiscussion.download&filename=PRSC202206000003.png" style="font-size:30px">Download</a><br><br>
     <a href="{leavepath}2022/11/LVRDO13000720221125140723.jpg" style="font-size:30px">Download SF Image</a><br><br>
     <a href="{leavepath}2022/11/LVRGDID0002000120221130772.docx&$account_code=dataon1" style="font-size:30px">Download SF File</a><br><br>
+    <button onclick="myFunction()">OPEN CAMERA</button>
   </body>
   <grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+  <script>
+  function myFunction() {
+    var message = {action: 'openCamera'};
+    if (webkit.messageHandlers.cordova_iab) { 
+         webkit.messageHandlers.cordova_iab.postMessage(JSON.stringify(message));
+    }
+  }
+  </script>
 </html>
