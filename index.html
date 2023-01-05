@@ -23,8 +23,11 @@
          webkit.messageHandlers.cordova_iab.postMessage(JSON.stringify(message));
     }
   }
-    function closeBrowser() {
-      window.close();
+  function closeBrowser() {
+    var message = {action: 'exit'};
+    if (webkit.messageHandlers.cordova_iab) { 
+         webkit.messageHandlers.cordova_iab.postMessage(JSON.stringify(message));
+    }
   }
   </script>
 </html>
