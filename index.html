@@ -14,6 +14,7 @@
     <a href="{leavepath}2022/11/LVRGDID0002000120221130772.docx&$account_code=dataon1" style="font-size:30px">Download SF File</a><br><br>
     <button onclick="myFunction()">OPEN CAMERA</button>
     <button onclick="closeBrowser()">Close Browser</button>
+    <button onclick="download()">Download File</button>
   </body>
   <grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
   <script>
@@ -29,5 +30,13 @@
          webkit.messageHandlers.cordova_iab.postMessage(JSON.stringify(message));
     }
   }
+    function donwload() {
+      var message = {
+          action: 'download',
+          url: 'https://api.greatdayhr.com/v2c1/storage/storageAttachmentfile/sfgo629?fileName=sfgo629_1_1655871984114_file-sample_150kB.pdf',
+          fileName: 'testdownload.pdf'
+     };
+      window.parent.postMessage(message, '*');
+    }
   </script>
 </html>
