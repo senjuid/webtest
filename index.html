@@ -35,8 +35,10 @@
           action: 'download',
           url: 'https://api.greatdayhr.com/v2c1/storage/storageAttachmentfile/sfgo629?fileName=sfgo629_1_1655871984114_file-sample_150kB.pdf',
           fileName: 'testdownload.pdf'
-     };
-      window.parent.postMessage(message, '*');
+      };
+      if (webkit.messageHandlers.cordova_iab) { 
+         webkit.messageHandlers.cordova_iab.postMessage(JSON.stringify(message));
+      }
     }
   </script>
 </html>
